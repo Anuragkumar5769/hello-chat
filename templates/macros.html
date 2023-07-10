@@ -1,0 +1,13 @@
+{% macro displayfield(fieldname,placeholdervalue) %}
+<div>
+    {{fieldname(class="user",placeholder=placeholdervalue ,**kwargs)}}
+
+    
+    <ul >
+        {% for error in fieldname.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+   
+</div>
+{% endmacro %}

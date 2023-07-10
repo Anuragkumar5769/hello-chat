@@ -1,0 +1,20 @@
+{% from 'macros.html' import displayfield %}
+
+{% extends 'pre-login.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+        <h2> Login Now!!</h2>
+        <form method="post" action="{{url_for('login')}}">
+        {{displayfield(form.username,"username", autocomplete="off",autofocus=true)}}
+        {{displayfield(form.password,"password")}}
+
+        <div>
+            {{form.submit}}
+        </div>
+        {{ form.csrf_token }}
+    </form>
+
+    <p>Have not registered? <a href="{{url_for('hello_world')}}">Register here</a>.</p>
+{% endblock  %}
