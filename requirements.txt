@@ -6,3 +6,4 @@ Flask_WTF
 passlib
 WTForms
 gunicorn
+psycopg2-binary
