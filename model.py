@@ -14,16 +14,16 @@ class User(UserMixin,db.Model):
     def __init__(self, **kwargs):
         super(User, self).__init__(**kwargs)
 
-class message_history(db.Model):
+# class message_history(db.Model):
 
-    __tablename__="messages"
-    id=id=db.Column(db.Integer, primary_key=True )
-    sender=db.Column(db.String(),nullable=False)
-    message=db.Column(db.String(),nullable=False)
-    room=db.Column(db.String(),nullable=False)
-    time=db.Column(db.Time)
+#     __tablename__="messages"
+#     id=id=db.Column(db.Integer, primary_key=True )
+#     sender=db.Column(db.String(),nullable=False)
+#     message=db.Column(db.String(),nullable=False)                         use it in future
+#     room=db.Column(db.String(),nullable=False)
+#     time=db.Column(db.Time)
 
-    def __init__(self, **kwargs):
-        super(message_history, self).__init__(**kwargs)
+#     def __init__(self, **kwargs):
+#         super(message_history, self).__init__(**kwargs)
 
     

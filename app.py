@@ -28,24 +28,24 @@ def load_user(id):
     return User.query.get(int(id))
 # id lene ke liye , query and filterby wala bhi use kar sakte yha
 
-@app.route('/get_table_data', methods=['GET'])
-def get_table_data():
-    # Retrieve table data from the database
-    table_data = retrieve_table_data_from_database()
+# @app.route('/get_table_data', methods=['GET'])
+# def get_table_data():
+#     # Retrieve table data from the database
+#     table_data = retrieve_table_data_from_database()
 
-    # Convert table data to JSON format
-    json_data = jsonify(table_data)
+#     # Convert table data to JSON format                                             may be use it in future for char history
+#     json_data = jsonify(table_data)
 
-    # Return the JSON response
-    return json_data
+#     # Return the JSON response
+#     return json_data
 
-def retrieve_table_data_from_database():
-    # Code to retrieve the table data from the database
-    # You can use your preferred database library here
-    # Example using SQLAlchemy:
-    table_data = message_history.query.all()
-    print(table_data)
-    return table_data
+# def retrieve_table_data_from_database():
+#     # Code to retrieve the table data from the database
+#     # You can use your preferred database library here
+#     # Example using SQLAlchemy:
+#     table_data = message_history.query.all()
+#     print(table_data)
+#     return table_data
 
 
 
@@ -115,10 +115,10 @@ def on_message(data):
     time_stamp = time.strftime('%b-%d %I:%M%p', time.localtime())
     send({"username": username, "msg": msg, "time_stamp": time_stamp}, room=room)
 
-    # storing in database
-    msg_history= message_history(sender=username,message=msg,room=room)
-    db.session.add(msg_history)
-    db.session.commit()
+    # # storing in database
+    # msg_history= message_history(sender=username,message=msg,room=room)
+    # db.session.add(msg_history)                                                 ** use in future **
+    # db.session.commit()
 
 
 @socketio.on('join')
