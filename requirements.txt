@@ -7,3 +7,4 @@ passlib
 WTForms
 gunicorn
 psycopg2-binary
+gevent-websocket
